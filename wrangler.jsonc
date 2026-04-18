@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "perfectspa_ksa",
+          "database_id": "5b1590aa-fe81-4aaa-be44-32dfe049e6be"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "21ff3e30f69b494499e8cd446e0c4180",
+            "binding": "SECRET",
+            "secret_name": "perfectspa"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
